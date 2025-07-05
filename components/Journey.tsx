@@ -163,7 +163,7 @@ const Journey = () => {
     { year: "2021", achievement: "First Freelance Paid Project", icon: "⭐" },
     { year: "2024", achievement: "First Business Contract", icon: "🌾" },
     { year: "2024", achievement: "Recognized as a Trusted Developer by International Clients", icon: "🤝" },
-    { year: "2025", achievement: "Started My First Corporate Internship (IntentTech Ltd)", icon: "🏢" }
+    { year: "2025", achievement: "Started My First Corporate Internship", icon: "🏢" }
   ];
 
 
