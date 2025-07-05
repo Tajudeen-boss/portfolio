@@ -6,10 +6,10 @@ import { useState, useEffect, useRef } from 'react';
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer,
   SiNodedotjs, SiPython, SiPostgresql, SiRedis, SiGraphql,
-  SiDocker, SiGooglecloudplatform, SiKubernetes, SiGit, SiAppwrite,
+  SiDocker,  SiKubernetes, SiGit, SiAppwrite,
   SiJavascript, SiHtml5, SiCss3, SiMongodb, SiFigma,
   SiVuedotjs, SiAngular, SiExpress, SiNestjs, SiMysql,
-  SiFirebase, SiVercel, SiNetlify, SiLinux, siExpress,
+  SiFirebase, SiVercel, SiNetlify, SiLinux,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 
