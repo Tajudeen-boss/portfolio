@@ -51,21 +51,21 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "alex@example.com",
-      link: "mailto:alex@example.com",
+      value: "developerabdullah.boss@gmail.com",
+      link: "mailto:developerabdullah.boss@gmail.com",
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+234 (0)8120835845",
+      link: "tel:+2348120835845",
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Nigeria",
       link: "#",
       color: "from-purple-500 to-pink-500"
     }
@@ -75,23 +75,20 @@ const Contact = () => {
     { 
       icon: <Github className="w-5 h-5" />, 
       name: "GitHub", 
-      link: "https://github.com",
+      link: "https://github.com/Tajudeen-boss",
       color: "hover:text-gray-400",
-      followers: "2.3k"
     },
     { 
       icon: <Linkedin className="w-5 h-5" />, 
       name: "LinkedIn", 
-      link: "https://linkedin.com",
+      link: "https://www.linkedin.com/in/abdullah-tajudeen-devboss/",
       color: "hover:text-blue-400",
-      followers: "5.1k"
     },
     { 
       icon: <Twitter className="w-5 h-5" />, 
       name: "Twitter", 
-      link: "https://twitter.com",
+      link: "https://x.com/DevAdullah",
       color: "hover:text-sky-400",
-      followers: "1.8k"
     }
   ];
 
