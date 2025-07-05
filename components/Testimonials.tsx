@@ -102,13 +102,6 @@ const Testimonials = () => {
     setCurrentTestimonial((prev) => (prev - 1 + allTestimonials.length) % allTestimonials.length);
   };
 
-  const stats = [
-    { number: "50+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
-    { number: "100%", label: "Satisfaction Rate", icon: <Heart className="w-6 h-6" /> },
-    { number: "5.0", label: "Average Rating", icon: <Star className="w-6 h-6" /> },
-    { number: "15+", label: "Awards Won", icon: <Award className="w-6 h-6" /> },
-  ];
-
   return (
     <section 
       id="testimonials" 
@@ -187,44 +180,6 @@ const Testimonials = () => {
             Don't just take my word for it. Here's what clients and collaborators 
             have to say about working with me.
           </motion.p>
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
-                delay: 0.8 + index * 0.1,
-                type: "spring",
-                stiffness: 100
-              }}
-              className="text-center group"
-              whileHover={{ scale: 1.05 }}
-            >
-              <motion.div
-                className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-primary/60 rounded-full flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-shadow duration-300"
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.6 }}
-              >
-                {stat.icon}
-              </motion.div>
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2 group-hover:text-foreground transition-colors duration-300">
-                {stat.number}
-              </div>
-              <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* Featured Testimonials */}

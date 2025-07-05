@@ -253,8 +253,8 @@ const About = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: "5+", label: "Years Experience", icon: "🚀" },
-            { number: "50+", label: "Projects Completed", icon: "💼" },
+            { number: "3+", label: "Years Experience", icon: "🚀" },
+            { number: "20+", label: "Projects Completed", icon: "💼" },
             { number: "100%", label: "Client Satisfaction", icon: "⭐" },
             { number: "24/7", label: "Support Available", icon: "🛟" },
           ].map((stat, index) => (
