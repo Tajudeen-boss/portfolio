@@ -362,7 +362,6 @@ const Contact = () => {
                       {social.icon}
                     </motion.div>
                     <span className="text-xs font-medium">{social.name}</span>
-                    <span className="text-xs text-muted-foreground">{social.followers}</span>
                   </motion.a>
                 ))}
               </div>
