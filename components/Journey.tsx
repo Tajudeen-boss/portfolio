@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, MapPin, Award, TrendingUp, Users, Code, Briefcase, GraduationCap } from 'lucide-react';
+import { Calendar, MapPin, Award, TrendingUp, Users, Book, Laptop, Code, Briefcase, GraduationCap } from 'lucide-react';
 import { useRef } from 'react';
 
 const Journey = () => {
@@ -23,112 +23,159 @@ const Journey = () => {
   const experiences = [
     {
       id: 1,
-      period: "2024 - Present",
-      role: "Senior Full Stack Developer",
-      company: "TechCorp Innovation",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      description: "Leading development of next-generation web applications using cutting-edge technologies. Architecting scalable solutions and mentoring junior developers.",
+      period: "2020 - 2022",
+      role: "Self-Taught Developer",
+      company: "Personal Projects",
+      location: "Remote",
+      type: "Learning & Projects",
+      description:
+        "Started my coding journey during the COVID-19 pandemic, learning web development from scratch through YouTube, tutorials, and hands-on projects.",
       achievements: [
-        "Increased application performance by 40%",
-        "Led team of 8 developers",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Built 3D visualization platform serving 100k+ users"
+        "Learned HTML, CSS, JavaScript basics",
+        "Built first static websites and mini projects",
+        "Practiced daily through real-world challenges",
+        "Completed small freelance gigs on Fiverr/Upwork"
       ],
-      technologies: ["React", "Next.js", "TypeScript", "Three.js", "AWS", "Docker"],
-      icon: <Briefcase className="w-6 h-6" />,
-      color: "from-blue-500 to-cyan-500"
+      technologies: ["HTML", "CSS", "JavaScript", "Git", "Basic APIs"],
+      icon: <TrendingUp className="w-6 h-6" />,
+      color: "from-orange-500 to-red-500"
     },
     {
       id: 2,
-      period: "2022 - 2024",
-      role: "Full Stack Developer",
-      company: "StartupXYZ",
+      period: "2022 - 2023",
+      role: "Freelance Frontend Developer",
+      company: "Freelance",
       location: "Remote",
-      type: "Full-time",
-      description: "Developed and maintained multiple client projects, focusing on modern web technologies and user experience optimization.",
+      type: "Freelance",
+      description:
+        "Started freelancing more seriously by building websites, dashboards, and learning full-stack development fundamentals.",
       achievements: [
-        "Built 15+ production applications",
-        "Reduced loading times by 50%",
-        "Implemented real-time features for 50k+ users",
-        "Mentored 3 junior developers"
+        "Completed 10+ websites and landing pages",
+        "Learned Next.js, Tailwind CSS, and TypeScript",
+        "Worked with clients across various industries",
+        "Started backend development (APIs & Databases)"
       ],
-      technologies: ["Vue.js", "Node.js", "PostgreSQL", "Redis", "GraphQL"],
+      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
       icon: <Code className="w-6 h-6" />,
       color: "from-purple-500 to-pink-500"
     },
     {
       id: 3,
-      period: "2021 - 2022",
-      role: "Frontend Developer",
-      company: "Digital Agency Pro",
-      location: "New York, NY",
-      type: "Full-time",
-      description: "Specialized in creating responsive, interactive web interfaces with focus on performance and accessibility.",
+      period: "2024",
+      role: "Contract Web Developer",
+      company: "Kishi Rice Mill",
+      location: "Nigeria",
+      type: "Contract",
+      description:
+        "Developed the official website and an online shop for dealers and distributors for Kishi Rice Mill, a Nigerian agricultural company.",
       achievements: [
-        "Delivered 25+ client projects",
-        "Improved accessibility scores by 35%",
-        "Created reusable component library",
-        "Won 'Best Innovation' award"
+        "Built a responsive, functional business website",
+        "Developed a mini ordering system for distributors",
+        "Improved the company's digital presence",
+        "Delivered the project on-time with positive feedback"
       ],
-      technologies: ["React", "SCSS", "JavaScript", "Webpack", "Figma"],
-      icon: <Award className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-500"
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+      icon: <Briefcase className="w-6 h-6" />,
+      color: "from-green-500 to-lime-500"
     },
     {
       id: 4,
-      period: "2020 - 2021",
-      role: "Junior Developer",
-      company: "WebSolutions Inc",
-      location: "Austin, TX",
-      type: "Full-time",
-      description: "Started my professional journey, learning industry best practices and contributing to various web development projects.",
+      period: "2024",
+      role: "Full Stack Web Developer",
+      company: "Skills Academy",
+      location: "Nigeria (Remote)",
+      type: "Full-Time",
+      description:
+        "Worked as a full-time developer to build and launch a Learning Management System (LMS) for Skills Academy, enabling users to buy and take courses online.",
       achievements: [
-        "Completed 10+ projects successfully",
-        "Learned 5 new technologies",
-        "Contributed to open source projects",
-        "Received 'Rising Star' recognition"
+        "Built full LMS platform with payment & course systems",
+        "Integrated student dashboards and course tracking",
+        "Enabled public course enrollment & learning system",
+        "Earned client’s trust, leading to rehiring later"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-      icon: <TrendingUp className="w-6 h-6" />,
-      color: "from-orange-500 to-red-500"
+      technologies: ["Next.js", "Node.js", "MongoDB", "TypeScript", "Supabase"],
+      icon: <Award className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-500"
     },
     {
       id: 5,
-      period: "2018 - 2020",
-      role: "Computer Science Degree",
-      company: "University of Technology",
-      location: "California",
-      type: "Education",
-      description: "Comprehensive study of computer science fundamentals, algorithms, data structures, and software engineering principles.",
+      period: "2024",
+      role: "Contract LMS Developer",
+      company: "Crownlinks Academy UK",
+      location: "United Kingdom (Remote)",
+      type: "Contract",
+      description:
+        "Contracted to develop a Learning Management System (LMS) for Crownlinks Academy UK to deliver professional certification courses.",
       achievements: [
-        "Graduated Magna Cum Laude",
-        "GPA: 3.8/4.0",
-        "President of Coding Club",
-        "Published research paper on AI"
+        "Built LMS tailored for UK professional education",
+        "Integrated secure payment gateways and assessments",
+        "Developed student dashboards & certification features",
+        "Delivered the project successfully for UK market"
       ],
-      technologies: ["Java", "Python", "C++", "Algorithms", "Data Structures"],
-      icon: <GraduationCap className="w-6 h-6" />,
+      technologies: ["Next.js", "Node.js", "TypeScript", "MongoDB", "Stripe"],
+      icon: <Book className="w-6 h-6" />,
       color: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 6,
+      period: "2024 - Present",
+      role: "Website Manager & Tutor (Part-Time)",
+      company: "Skills Academy",
+      location: "Nigeria (Remote)",
+      type: "Part-Time",
+      description:
+        "Rehired by Skills Academy as a part-time website manager and tutor to maintain their LMS platform and deliver technical courses.",
+      achievements: [
+        "Maintain and enhance LMS platform regularly",
+        "Deliver technical courses to students on the platform",
+        "Support student learning and improve course experiences",
+        "Handle platform troubleshooting & technical issues"
+      ],
+      technologies: ["Next.js", "Supabase", "MongoDB", "Content Creation"],
+      icon: <Users className="w-6 h-6" />,
+      color: "from-pink-500 to-rose-500"
+    },
+    {
+      id: 7,
+      period: "March 2025 - Present",
+      role: "Junior Full Stack Software Intern",
+      company: "IntentTech Ltd",
+      location: "United Kingdom (Remote)",
+      type: "Part-Time Internship",
+      description:
+        "Currently interning as a Junior Full Stack Developer, contributing to multiple projects with senior developers in a collaborative environment.",
+      achievements: [
+        "Assist in building scalable, production-level apps",
+        "Work collaboratively with senior development teams",
+        "Follow secure coding practices and learning plans",
+        "Continuously learn and contribute to advanced tools"
+      ],
+      technologies: ["Next.js", "NestJS", "MongoDB", "Azure", "TypeScript", "React Query"],
+      icon: <Laptop className="w-6 h-6" />,
+      color: "from-yellow-500 to-amber-500"
     }
   ];
 
+
+
   const milestones = [
-    { year: "2024", achievement: "Senior Developer Promotion", icon: "🚀" },
-    { year: "2023", achievement: "Led Major Product Launch", icon: "🎯" },
-    { year: "2022", achievement: "Full Stack Certification", icon: "🏆" },
-    { year: "2021", achievement: "First Industry Award", icon: "⭐" },
-    { year: "2020", achievement: "Started Professional Career", icon: "💼" },
+    { year: "2020", achievement: "Discovered My Passion for Coding", icon: "💡" },
+    { year: "2021", achievement: "First Freelance Paid Project", icon: "⭐" },
+    { year: "2024", achievement: "First Business Contract", icon: "🌾" },
+    { year: "2024", achievement: "Recognized as a Trusted Developer by International Clients", icon: "🤝" },
+    { year: "2025", achievement: "Started My First Corporate Internship (IntentTech Ltd)", icon: "🏢" }
   ];
 
+
+
   return (
-    <section 
-      id="journey" 
+    <section
+      id="journey"
       ref={sectionRef}
       className="py-20 bg-gradient-to-br from-muted/20 via-background to-muted/20 relative overflow-hidden"
     >
       {/* Animated background elements */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-30"
         style={{ y, rotateX }}
       >
@@ -189,14 +236,14 @@ const Journey = () => {
           >
             My <span className="gradient-text">Journey</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            A timeline of growth, learning, and achievements that shaped my career 
+            A timeline of growth, learning, and achievements that shaped my career
             as a full stack developer.
           </motion.p>
         </motion.div>
@@ -218,15 +265,14 @@ const Journey = () => {
                 key={exp.id}
                 initial={{ opacity: 0, y: 50, rotateY: index % 2 === 0 ? -15 : 15 }}
                 animate={inView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: 0.6 + index * 0.2,
                   type: "spring",
                   stiffness: 100
                 }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex-col md:space-x-8`}
+                className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  } flex-col md:space-x-8`}
               >
                 {/* Timeline dot */}
                 <motion.div
@@ -243,9 +289,8 @@ const Journey = () => {
 
                 {/* Content card */}
                 <motion.div
-                  className={`w-full md:w-5/12 ${
-                    index % 2 === 0 ? 'md:ml-16' : 'md:mr-16'
-                  } ml-20 md:ml-0`}
+                  className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:ml-16' : 'md:mr-16'
+                    } ml-20 md:ml-0`}
                   whileHover={{ scale: 1.02, rotateY: index % 2 === 0 ? 5 : -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -327,7 +372,7 @@ const Journey = () => {
                               animate={inView ? { opacity: 1, x: 0 } : {}}
                               transition={{ delay: 1.5 + index * 0.2 + achIndex * 0.1 }}
                             >
-                              <motion.span 
+                              <motion.span
                                 className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"
                                 whileHover={{ scale: 1.5 }}
                               />
@@ -377,15 +422,15 @@ const Journey = () => {
           <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
             Career <span className="gradient-text">Milestones</span>
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}
                 initial={{ opacity: 0, y: 30, rotateY: -15 }}
                 animate={inView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: 2.2 + index * 0.1,
                   type: "spring",
                   stiffness: 100

@@ -22,7 +22,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "3D E-Commerce Platform",
+      title: "E-Commerce Platform",
       description: "A revolutionary e-commerce experience with 3D product visualization, AR try-on features, and immersive shopping environments built with Three.js and WebGL.",
       image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
       tech: ["Next.js", "Three.js", "TypeScript", "Stripe", "PostgreSQL"],
@@ -92,20 +92,6 @@ const Projects = () => {
       featured: false,
       stats: { stars: 789, forks: 156 }
     },
-    {
-      id: 6,
-      title: "Virtual Reality Training Platform",
-      description: "Immersive VR training platform for corporate education with interactive simulations, progress tracking, and certification management.",
-      image: "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=800",
-      tech: ["Unity", "C#", "WebXR", "Node.js", "PostgreSQL"],
-      links: {
-        live: "#",
-        github: "#",
-        demo: "#"
-      },
-      featured: false,
-      stats: { stars: 345, forks: 67 }
-    }
   ];
 
   const featuredProjects = projects.filter(project => project.featured);

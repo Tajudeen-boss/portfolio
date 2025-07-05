@@ -6,12 +6,12 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Alex Chen - Full Stack Developer',
+  title: 'Abdullah Tajudeen - Full Stack Developer',
   description: 'Award-winning full stack software developer specializing in modern web technologies, 3D experiences, and innovative digital solutions.',
   keywords: 'full stack developer, software engineer, web developer, React, Next.js, Three.js, TypeScript',
-  authors: [{ name: 'Alex Chen' }],
+  authors: [{ name: 'Abdullah Tajudeen' }],
   openGraph: {
-    title: 'Alex Chen - Full Stack Developer',
+    title: 'Abdullah Tajudeen - Full Stack Developer',
     description: 'Award-winning full stack software developer specializing in modern web technologies.',
     type: 'website',
   },

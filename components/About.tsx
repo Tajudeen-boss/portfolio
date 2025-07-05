@@ -48,13 +48,13 @@ const About = () => {
   ];
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       ref={sectionRef}
       className="py-20 bg-gradient-to-br from-muted/20 via-background to-muted/20 relative overflow-hidden"
     >
       {/* Animated background elements */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-30"
         style={{ y, rotateX }}
       >
@@ -115,17 +115,19 @@ const About = () => {
           >
             About <span className="gradient-text">Me</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            I'm a passionate full stack developer with over 5 years of experience creating 
-            digital experiences that combine technical excellence with creative innovation. 
-            My journey spans from startup environments to enterprise solutions, always pushing 
-            the boundaries of what's possible on the web.
+            I started my coding journey during the COVID-19 lockdown—when the world slowed down, I sped up.
+            With just curiosity, determination, and free online resources, I taught myself how to code. No fancy degrees. No formal classes. Just pure grit and late-night learning.
+
+            What began as a hobby quickly turned into a freelance career. I started working with real clients—solving problems, building websites, and creating apps that people actually use.
+
+            Despite my age, I’ve been trusted by clients and teams because I deliver results, meet deadlines, and never stop learning.
           </motion.p>
         </motion.div>
 
@@ -145,9 +147,9 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-primary">My Philosophy</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                I believe that great software is born from the intersection of robust engineering 
-                and thoughtful design. Every line of code I write is driven by a commitment to 
-                creating solutions that not only work flawlessly but also delight users and 
+                I believe that great software is born from the intersection of robust engineering
+                and thoughtful design. Every line of code I write is driven by a commitment to
+                creating solutions that not only work flawlessly but also delight users and
                 drive business success.
               </p>
             </motion.div>
@@ -164,9 +166,10 @@ const About = () => {
               <ul className="space-y-3 text-muted-foreground">
                 {[
                   'Full Stack Web Development',
-                  '3D Web Experiences & WebGL',
+                  'API Integrations & Automation',
                   'Mobile App Development',
-                  'Cloud Architecture & DevOps'
+                  'Cloud Architecture & DevOps',
+                  'Backend Systems & Databases'
                 ].map((item, index) => (
                   <motion.li
                     key={item}
@@ -175,7 +178,7 @@ const About = () => {
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.6 + index * 0.1 }}
                   >
-                    <motion.span 
+                    <motion.span
                       className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"
                       whileHover={{ scale: 1.5 }}
                     />
@@ -197,15 +200,15 @@ const About = () => {
                 key={feature.title}
                 initial={{ opacity: 0, y: 20, rotateY: -15 }}
                 animate={inView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: 0.6 + index * 0.1,
                   type: "spring",
                   stiffness: 100
                 }}
                 className="group bg-card/50 backdrop-blur-xl rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-500 creative-hover relative overflow-hidden"
-                whileHover={{ 
-                  scale: 1.05, 
+                whileHover={{
+                  scale: 1.05,
                   rotateY: index % 2 === 0 ? 5 : -5,
                   z: 10
                 }}
@@ -223,11 +226,11 @@ const About = () => {
                 >
                   {feature.icon}
                 </motion.div>
-                
+
                 <h4 className="text-lg font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300 relative z-10">
                   {feature.title}
                 </h4>
-                
+
                 <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300 relative z-10">
                   {feature.description}
                 </p>
@@ -260,8 +263,8 @@ const About = () => {
               className="text-center group"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: 1.2 + index * 0.1,
                 type: "spring",
                 stiffness: 100

@@ -6,10 +6,10 @@ import { useState, useEffect, useRef } from 'react';
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer,
   SiNodedotjs, SiPython, SiPostgresql, SiRedis, SiGraphql,
-  SiDocker, SiGooglecloudplatform, SiKubernetes, SiGit,
+  SiDocker, SiGooglecloudplatform, SiKubernetes, SiGit, SiAppwrite,
   SiJavascript, SiHtml5, SiCss3, SiMongodb, SiFigma,
   SiVuedotjs, SiAngular, SiExpress, SiNestjs, SiMysql,
-  SiFirebase, SiVercel, SiNetlify, SiLinux, SiVisualstudiocode
+  SiFirebase, SiVercel, SiNetlify, SiLinux, siExpress,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
 
@@ -34,13 +34,13 @@ const Skills = () => {
   const skillIcons = {
     'React/Next.js': <SiReact className="w-8 h-8" />,
     'TypeScript': <SiTypescript className="w-8 h-8" />,
-    'Three.js/WebGL': <SiJavascript className="w-8 h-8" />,
+    'Javascript': <SiJavascript className="w-8 h-8" />,
     'Tailwind CSS': <SiTailwindcss className="w-8 h-8" />,
     'Framer Motion': <SiFramer className="w-8 h-8" />,
     'Node.js': <SiNodedotjs className="w-8 h-8" />,
-    'Python': <SiPython className="w-8 h-8" />,
+    'Express.js': <SiPython className="w-8 h-8" />,
     'PostgreSQL': <SiPostgresql className="w-8 h-8" />,
-    'Redis': <SiRedis className="w-8 h-8" />,
+    'Nest.js': <SiNestjs className="w-8 h-8" />,
     'GraphQL': <SiGraphql className="w-8 h-8" />,
     'Docker': <SiDocker className="w-8 h-8" />,
     'AWS/GCP': <FaAws className="w-8 h-8" />,
@@ -56,7 +56,7 @@ const Skills = () => {
       skills: [
         { name: "React/Next.js", level: 95, icon: <SiReact className="w-6 h-6" /> },
         { name: "TypeScript", level: 90, icon: <SiTypescript className="w-6 h-6" /> },
-        { name: "Three.js/WebGL", level: 85, icon: <SiJavascript className="w-6 h-6" /> },
+        { name: "Javascript", level: 85, icon: <SiJavascript className="w-6 h-6" /> },
         { name: "Tailwind CSS", level: 92, icon: <SiTailwindcss className="w-6 h-6" /> },
         { name: "Framer Motion", level: 88, icon: <SiFramer className="w-6 h-6" /> },
       ]
@@ -66,9 +66,9 @@ const Skills = () => {
       icon: <SiNodedotjs className="w-8 h-8" />,
       skills: [
         { name: "Node.js", level: 90, icon: <SiNodedotjs className="w-6 h-6" /> },
-        { name: "Python", level: 85, icon: <SiPython className="w-6 h-6" /> },
+        { name: "Expres.js", level: 85, icon: <SiExpress className="w-6 h-6" /> },
         { name: "PostgreSQL", level: 88, icon: <SiPostgresql className="w-6 h-6" /> },
-        { name: "Redis", level: 80, icon: <SiRedis className="w-6 h-6" /> },
+        { name: "Nest.js", level: 80, icon: <SiNestjs className="w-6 h-6" /> },
         { name: "GraphQL", level: 85, icon: <SiGraphql className="w-6 h-6" /> },
       ]
     },
@@ -296,6 +296,8 @@ const Skills = () => {
           <h3 className="text-2xl font-bold mb-8 text-foreground">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
+              { name: 'HTML', icon: <SiHtml5 className="w-5 h-5" /> },
+              { name: 'CSS', icon: <SiHtml5 className="w-5 h-5" /> },
               { name: 'React', icon: <SiReact className="w-5 h-5" /> },
               { name: 'Next.js', icon: <SiNextdotjs className="w-5 h-5" /> },
               { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5" /> },
@@ -303,15 +305,14 @@ const Skills = () => {
               { name: 'Python', icon: <SiPython className="w-5 h-5" /> },
               { name: 'PostgreSQL', icon: <SiPostgresql className="w-5 h-5" /> },
               { name: 'MongoDB', icon: <SiMongodb className="w-5 h-5" /> },
-              { name: 'Redis', icon: <SiRedis className="w-5 h-5" /> },
+              { name: 'MySQL', icon: <SiMysql className="w-5 h-5" /> },
+              { name: 'Appwrite', icon: <SiAppwrite className="w-5 h-5" /> },
               { name: 'Docker', icon: <SiDocker className="w-5 h-5" /> },
               { name: 'AWS', icon: <FaAws className="w-5 h-5" /> },
               { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5" /> },
               { name: 'Framer Motion', icon: <SiFramer className="w-5 h-5" /> },
               { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-5 h-5" /> },
               { name: 'GraphQL', icon: <SiGraphql className="w-5 h-5" /> },
-              { name: 'Vue.js', icon: <SiVuedotjs className="w-5 h-5" /> },
-              { name: 'Angular', icon: <SiAngular className="w-5 h-5" /> },
               { name: 'Firebase', icon: <SiFirebase className="w-5 h-5" /> },
               { name: 'Vercel', icon: <SiVercel className="w-5 h-5" /> }
             ].map((tech, index) => (
