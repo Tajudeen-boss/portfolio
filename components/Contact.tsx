@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, Calendar } from 'lucide-react';
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -27,17 +28,43 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setStatusMessage(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
+
+      toast.success("Message sent successfully!");
+      setStatusMessage(" Thank you! I’ll get back to you soon.");
+
+
+      setTimeout(() => setStatusMessage(null), 3000);
+    } catch (error) {
+      toast.error("Something went wrong. Try again later.");
+      setStatusMessage(" Oops! Please try again later.");
+
+      setTimeout(() => setStatusMessage(null), 5000);
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Thank you for your message! I\'ll get back to you soon.');
-    }, 2000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -72,34 +99,34 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { 
-      icon: <Github className="w-5 h-5" />, 
-      name: "GitHub", 
+    {
+      icon: <Github className="w-5 h-5" />,
+      name: "GitHub",
       link: "https://github.com/Tajudeen-boss",
       color: "hover:text-gray-400",
     },
-    { 
-      icon: <Linkedin className="w-5 h-5" />, 
-      name: "LinkedIn", 
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      name: "LinkedIn",
       link: "https://www.linkedin.com/in/abdullah-tajudeen-devboss/",
       color: "hover:text-blue-400",
     },
-    { 
-      icon: <Twitter className="w-5 h-5" />, 
-      name: "Twitter", 
+    {
+      icon: <Twitter className="w-5 h-5" />,
+      name: "Twitter",
       link: "https://x.com/DevAdullah",
       color: "hover:text-sky-400",
     }
   ];
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       ref={sectionRef}
       className="py-20 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden"
     >
       {/* Animated background */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-20"
         style={{ y }}
       >
@@ -157,14 +184,14 @@ const Contact = () => {
           >
             Get In <span className="gradient-text">Touch</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            Ready to bring your ideas to life? Let's discuss how we can work together 
+            Ready to bring your ideas to life? Let's discuss how we can work together
             to create something extraordinary.
           </motion.p>
         </motion.div>
@@ -181,7 +208,7 @@ const Contact = () => {
               <Send className="w-6 h-6 text-primary" />
               <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
             </div>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div
@@ -203,7 +230,7 @@ const Contact = () => {
                     placeholder="John Doe"
                   />
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -224,7 +251,7 @@ const Contact = () => {
                   />
                 </motion.div>
               </div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -244,7 +271,7 @@ const Contact = () => {
                   placeholder="Project Discussion"
                 />
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -264,7 +291,7 @@ const Contact = () => {
                   placeholder="Tell me about your project..."
                 />
               </motion.div>
-              
+
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
@@ -278,7 +305,7 @@ const Contact = () => {
                 <span className="relative z-10 flex items-center justify-center">
                   {isSubmitting ? (
                     <>
-                      <motion.div 
+                      <motion.div
                         className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full mr-2"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -293,6 +320,9 @@ const Contact = () => {
                   )}
                 </span>
               </motion.button>
+              {statusMessage && (
+                <p className="mt-2 text-center text-sm text-gray-300">{statusMessage}</p>
+              )}
             </form>
           </motion.div>
 
@@ -308,7 +338,7 @@ const Contact = () => {
                 <Calendar className="w-6 h-6 text-primary" />
                 <h3 className="text-2xl font-bold text-foreground">Contact Information</h3>
               </div>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.a
@@ -340,7 +370,7 @@ const Contact = () => {
                 <Github className="w-6 h-6 text-primary" />
                 <h3 className="text-2xl font-bold text-foreground">Follow Me</h3>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -375,11 +405,11 @@ const Contact = () => {
             >
               <h3 className="text-2xl font-bold mb-4 text-foreground">Let's Collaborate</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always interested in hearing about new projects and opportunities. 
-                Whether you're a startup looking to build your MVP or an established 
+                I'm always interested in hearing about new projects and opportunities.
+                Whether you're a startup looking to build your MVP or an established
                 company wanting to innovate, I'd love to help bring your vision to life.
               </p>
-              
+
               <motion.div
                 className="mt-6 flex items-center space-x-2 text-sm text-primary"
                 initial={{ opacity: 0 }}
