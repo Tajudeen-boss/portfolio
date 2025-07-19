@@ -7,7 +7,6 @@ import About from '@/components/About';
 import Journey from '@/components/Journey';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
-import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
 import LoadingScreen from '@/components/LoadingScreen';
@@ -47,7 +46,6 @@ export default function Home() {
             <Journey />
             <Skills />
             <Projects />
-            <Testimonials />
             <Contact />
           </main>
         )}

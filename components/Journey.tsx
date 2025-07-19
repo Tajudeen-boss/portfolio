@@ -135,25 +135,7 @@ const Journey = () => {
       icon: <Users className="w-6 h-6" />,
       color: "from-pink-500 to-rose-500"
     },
-    {
-      id: 7,
-      period: "March 2025 - Present",
-      role: "Junior Full Stack Software Intern",
-      company: "IntentTech Ltd",
-      location: "United Kingdom (Remote)",
-      type: "Part-Time Internship",
-      description:
-        "Currently interning as a Junior Full Stack Developer, contributing to multiple projects with senior developers in a collaborative environment.",
-      achievements: [
-        "Assist in building scalable, production-level apps",
-        "Work collaboratively with senior development teams",
-        "Follow secure coding practices and learning plans",
-        "Continuously learn and contribute to advanced tools"
-      ],
-      technologies: ["Next.js", "NestJS", "MongoDB", "Azure", "TypeScript", "React Query"],
-      icon: <Laptop className="w-6 h-6" />,
-      color: "from-yellow-500 to-amber-500"
-    }
+    
   ];
 
 
@@ -162,8 +144,7 @@ const Journey = () => {
     { year: "2020", achievement: "Discovered My Passion for Coding", icon: "💡" },
     { year: "2021", achievement: "First Freelance Paid Project", icon: "⭐" },
     { year: "2024", achievement: "First Business Contract", icon: "🌾" },
-    { year: "2024", achievement: "Recognized as a Trusted Developer by International Clients", icon: "🤝" },
-    { year: "2025", achievement: "Started My First Corporate Internship", icon: "🏢" }
+    { year: "2024", achievement: "Recognized as a Trusted Developer by International Clients", icon: "🤝" }
   ];
 
 
@@ -423,7 +404,7 @@ const Journey = () => {
             Career <span className="gradient-text">Milestones</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={milestone.year}

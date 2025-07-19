@@ -15,7 +15,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'journey', 'skills', 'projects', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'journey', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -40,7 +40,6 @@ const Navigation = () => {
     { name: 'Journey', href: '#journey' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
 
